@@ -11,6 +11,9 @@
 		"BlobStorageProducts_connectionString": {
 			"value": ""
 		},
+		"SqlDatabaseCustomers_password": {
+			"value": ""
+		},
 		"AdvWorksDb_properties_typeProperties_server": {
 			"value": "dbserver98872.database.windows.net"
 		},
@@ -18,6 +21,15 @@
 			"value": "azuresqldb"
 		},
 		"AdvWorksDb_properties_typeProperties_userName": {
+			"value": "mahimajain01"
+		},
+		"SqlDatabaseCustomers_properties_typeProperties_server": {
+			"value": "dbserver98872.database.windows.net"
+		},
+		"SqlDatabaseCustomers_properties_typeProperties_database": {
+			"value": "azuresqldb"
+		},
+		"SqlDatabaseCustomers_properties_typeProperties_userName": {
 			"value": "mahimajain01"
 		}
 	}

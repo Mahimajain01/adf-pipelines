@@ -15,6 +15,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'BlobStorageProducts'"
 		},
+		"SqlDatabaseCustomers_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlDatabaseCustomers'"
+		},
 		"AdvWorksDb_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "dbserver98872.database.windows.net"
@@ -24,6 +28,18 @@
 			"defaultValue": "azuresqldb"
 		},
 		"AdvWorksDb_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "mahimajain01"
+		},
+		"SqlDatabaseCustomers_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "dbserver98872.database.windows.net"
+		},
+		"SqlDatabaseCustomers_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "azuresqldb"
+		},
+		"SqlDatabaseCustomers_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "mahimajain01"
 		},
@@ -60,6 +76,9 @@
 					"BlobStorageProducts_connectionString": {
 						"value": "[parameters('BlobStorageProducts_connectionString')]"
 					},
+					"SqlDatabaseCustomers_password": {
+						"value": "[parameters('SqlDatabaseCustomers_password')]"
+					},
 					"AdvWorksDb_properties_typeProperties_server": {
 						"value": "[parameters('AdvWorksDb_properties_typeProperties_server')]"
 					},
@@ -68,6 +87,15 @@
 					},
 					"AdvWorksDb_properties_typeProperties_userName": {
 						"value": "[parameters('AdvWorksDb_properties_typeProperties_userName')]"
+					},
+					"SqlDatabaseCustomers_properties_typeProperties_server": {
+						"value": "[parameters('SqlDatabaseCustomers_properties_typeProperties_server')]"
+					},
+					"SqlDatabaseCustomers_properties_typeProperties_database": {
+						"value": "[parameters('SqlDatabaseCustomers_properties_typeProperties_database')]"
+					},
+					"SqlDatabaseCustomers_properties_typeProperties_userName": {
+						"value": "[parameters('SqlDatabaseCustomers_properties_typeProperties_userName')]"
 					}
 				}
 			},
