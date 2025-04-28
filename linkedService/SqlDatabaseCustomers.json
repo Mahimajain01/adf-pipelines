@@ -1,0 +1,17 @@
+{
+	"name": "SqlDatabaseCustomers",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "dbserver98872.database.windows.net",
+			"database": "azuresqldb",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "mahimajain01",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDk1N0JERjFCLTkzM0ItNENGMS04NUMwLTc3QzdGOUYwNEYxMV9kZjE5ZDkyMy0zMjk4LTRkYjMtYWM5ZS0xMmU2MTI1Nzc3ZDkiDQp9"
+		}
+	}
+}
