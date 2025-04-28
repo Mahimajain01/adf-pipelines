@@ -19,6 +19,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'SqlDatabaseCustomers'"
 		},
+		"SqlCustomers_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlCustomers'"
+		},
 		"AdvWorksDb_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "dbserver98872.database.windows.net"
@@ -40,6 +44,18 @@
 			"defaultValue": "azuresqldb"
 		},
 		"SqlDatabaseCustomers_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "mahimajain01"
+		},
+		"SqlCustomers_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "dbserver98872.database.windows.net"
+		},
+		"SqlCustomers_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "azuresqldb"
+		},
+		"SqlCustomers_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "mahimajain01"
 		}
@@ -123,6 +139,28 @@
 					"password": {
 						"type": "SecureString",
 						"value": "[parameters('SqlDatabaseCustomers_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlCustomers')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('SqlCustomers_properties_typeProperties_server')]",
+					"database": "[parameters('SqlCustomers_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": false,
+					"authenticationType": "SQL",
+					"userName": "[parameters('SqlCustomers_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('SqlCustomers_password')]"
 					}
 				}
 			},
@@ -349,6 +387,119 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/CustomersTable1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "SqlCustomers",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "CustomerID",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "NameStyle",
+						"type": "bit"
+					},
+					{
+						"name": "Title",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FirstName",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MiddleName",
+						"type": "nvarchar"
+					},
+					{
+						"name": "LastName",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Suffix",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CompanyName",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SalesPerson",
+						"type": "nvarchar"
+					},
+					{
+						"name": "EmailAddress",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Phone",
+						"type": "nvarchar"
+					},
+					{
+						"name": "PasswordHash",
+						"type": "varchar"
+					},
+					{
+						"name": "PasswordSalt",
+						"type": "varchar"
+					},
+					{
+						"name": "rowguid",
+						"type": "uniqueidentifier"
+					},
+					{
+						"name": "ModifiedDate",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					}
+				],
+				"typeProperties": {
+					"schema": "SalesLT",
+					"table": "Customer"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/SqlCustomers')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/BlobStorageCustumers')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "BlobStorageProducts",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "CustomersList.csv",
+						"container": "customers"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/BlobStorageProducts')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/2 Products db-blob pipeline')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -420,7 +571,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/3 Customers db-Blob pipeline')]",
+			"name": "[concat(parameters('factoryName'), '/3 Customers db-blob pipeline')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -444,16 +595,15 @@
 								"partitionOption": "None"
 							},
 							"sink": {
-								"type": "AzureSqlSink",
-								"writeBehavior": "upsert",
-								"upsertSettings": {
-									"useTempDB": true,
-									"keys": [
-										"CustomerID"
-									]
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobStorageWriteSettings"
 								},
-								"sqlWriterUseTableLock": false,
-								"disableMetricsCollection": false
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".csv"
+								}
 							},
 							"enableStaging": false,
 							"translator": {
@@ -467,14 +617,14 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "CustomersTable",
+								"referenceName": "CustomersTable1",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
 						],
 						"outputs": [
 							{
-								"referenceName": "CustomersTable",
+								"referenceName": "BlobStorageCustumers",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -487,7 +637,8 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/CustomersTable')]"
+				"[concat(variables('factoryId'), '/datasets/CustomersTable1')]",
+				"[concat(variables('factoryId'), '/datasets/BlobStorageCustumers')]"
 			]
 		}
 	]
