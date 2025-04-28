@@ -1,5 +1,5 @@
 {
-	"name": "SqlTableCustomers",
+	"name": "CustomersTable",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "SqlDatabaseCustomers",
