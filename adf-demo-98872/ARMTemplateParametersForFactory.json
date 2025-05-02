@@ -5,17 +5,26 @@
 		"factoryName": {
 			"value": "adf-demo-98872"
 		},
+		"ADLSSink_accountKey": {
+			"value": ""
+		},
 		"AdvWorksDb_password": {
 			"value": ""
 		},
 		"BlobStorageProducts_connectionString": {
 			"value": ""
 		},
+		"SqlCustomers_password": {
+			"value": ""
+		},
 		"SqlDatabaseCustomers_password": {
 			"value": ""
 		},
-		"SqlCustomers_password": {
+		"TaxiTripDb_password": {
 			"value": ""
+		},
+		"ADLSSink_properties_typeProperties_url": {
+			"value": "https://adlstripdata98872.dfs.core.windows.net/"
 		},
 		"AdvWorksDb_properties_typeProperties_server": {
 			"value": "dbserver98872.database.windows.net"
@@ -24,6 +33,15 @@
 			"value": "azuresqldb"
 		},
 		"AdvWorksDb_properties_typeProperties_userName": {
+			"value": "mahimajain01"
+		},
+		"SqlCustomers_properties_typeProperties_server": {
+			"value": "dbserver98872.database.windows.net"
+		},
+		"SqlCustomers_properties_typeProperties_database": {
+			"value": "azuresqldb"
+		},
+		"SqlCustomers_properties_typeProperties_userName": {
 			"value": "mahimajain01"
 		},
 		"SqlDatabaseCustomers_properties_typeProperties_server": {
@@ -35,14 +53,14 @@
 		"SqlDatabaseCustomers_properties_typeProperties_userName": {
 			"value": "mahimajain01"
 		},
-		"SqlCustomers_properties_typeProperties_server": {
+		"TaxiTripDb_properties_typeProperties_server": {
 			"value": "dbserver98872.database.windows.net"
 		},
-		"SqlCustomers_properties_typeProperties_database": {
-			"value": "azuresqldb"
+		"TaxiTripDb_properties_typeProperties_database": {
+			"value": "taxi-data"
 		},
-		"SqlCustomers_properties_typeProperties_userName": {
-			"value": "mahimajain01"
+		"TaxiTripDb_properties_typeProperties_userName": {
+			"value": "mahima"
 		}
 	}
 }
