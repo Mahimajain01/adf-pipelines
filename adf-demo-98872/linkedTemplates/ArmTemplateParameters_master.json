@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "adf-demo-98872"
 		},
+		"ADLSGen2_accountKey": {
+			"value": ""
+		},
 		"ADLSSink_accountKey": {
 			"value": ""
 		},
@@ -25,6 +28,9 @@
 		},
 		"TripAggregateBlob_connectionString": {
 			"value": ""
+		},
+		"ADLSGen2_properties_typeProperties_url": {
+			"value": "https://adlstripdata98872.dfs.core.windows.net/"
 		},
 		"ADLSSink_properties_typeProperties_url": {
 			"value": "https://adlstripdata98872.dfs.core.windows.net/"
