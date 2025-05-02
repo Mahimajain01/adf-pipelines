@@ -29,6 +29,9 @@
 		"TripAggregateBlob_connectionString": {
 			"value": ""
 		},
+		"FlipkartBlob_connectionString": {
+			"value": ""
+		},
 		"ADLSGen2_properties_typeProperties_url": {
 			"value": "https://adlstripdata98872.dfs.core.windows.net/"
 		},
