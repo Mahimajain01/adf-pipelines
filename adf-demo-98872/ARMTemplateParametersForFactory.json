@@ -17,6 +17,9 @@
 		"BlobStorageProducts_connectionString": {
 			"value": ""
 		},
+		"FlipkartBlob_connectionString": {
+			"value": ""
+		},
 		"SqlCustomers_password": {
 			"value": ""
 		},
@@ -29,7 +32,7 @@
 		"TripAggregateBlob_connectionString": {
 			"value": ""
 		},
-		"FlipkartBlob_connectionString": {
+		"LookupBlobStorage_connectionString": {
 			"value": ""
 		},
 		"ADLSGen2_properties_typeProperties_url": {
@@ -42,10 +45,10 @@
 			"value": "dbserver98872.database.windows.net"
 		},
 		"AdvWorksDb_properties_typeProperties_database": {
-			"value": "azuresqldb"
+			"value": "db"
 		},
 		"AdvWorksDb_properties_typeProperties_userName": {
-			"value": "mahimajain01"
+			"value": "mahima"
 		},
 		"SqlCustomers_properties_typeProperties_server": {
 			"value": "dbserver98872.database.windows.net"

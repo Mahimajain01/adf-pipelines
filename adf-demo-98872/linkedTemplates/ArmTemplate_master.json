@@ -23,6 +23,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'BlobStorageProducts'"
 		},
+		"FlipkartBlob_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'FlipkartBlob'"
+		},
 		"SqlCustomers_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'SqlCustomers'"
@@ -39,9 +43,9 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'TripAggregateBlob'"
 		},
-		"FlipkartBlob_connectionString": {
+		"LookupBlobStorage_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'FlipkartBlob'"
+			"metadata": "Secure string for 'connectionString' of 'LookupBlobStorage'"
 		},
 		"ADLSGen2_properties_typeProperties_url": {
 			"type": "string",
@@ -57,11 +61,11 @@
 		},
 		"AdvWorksDb_properties_typeProperties_database": {
 			"type": "string",
-			"defaultValue": "azuresqldb"
+			"defaultValue": "db"
 		},
 		"AdvWorksDb_properties_typeProperties_userName": {
 			"type": "string",
-			"defaultValue": "mahimajain01"
+			"defaultValue": "mahima"
 		},
 		"SqlCustomers_properties_typeProperties_server": {
 			"type": "string",
@@ -138,6 +142,9 @@
 					"BlobStorageProducts_connectionString": {
 						"value": "[parameters('BlobStorageProducts_connectionString')]"
 					},
+					"FlipkartBlob_connectionString": {
+						"value": "[parameters('FlipkartBlob_connectionString')]"
+					},
 					"SqlCustomers_password": {
 						"value": "[parameters('SqlCustomers_password')]"
 					},
@@ -150,8 +157,8 @@
 					"TripAggregateBlob_connectionString": {
 						"value": "[parameters('TripAggregateBlob_connectionString')]"
 					},
-					"FlipkartBlob_connectionString": {
-						"value": "[parameters('FlipkartBlob_connectionString')]"
+					"LookupBlobStorage_connectionString": {
+						"value": "[parameters('LookupBlobStorage_connectionString')]"
 					},
 					"ADLSGen2_properties_typeProperties_url": {
 						"value": "[parameters('ADLSGen2_properties_typeProperties_url')]"
