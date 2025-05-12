@@ -85,7 +85,7 @@
 		},
 		"SqlDatabaseCustomers_properties_typeProperties_database": {
 			"type": "string",
-			"defaultValue": "AdventureWorksDW2022"
+			"defaultValue": "db"
 		},
 		"SqlDatabaseCustomers_properties_typeProperties_userName": {
 			"type": "string",

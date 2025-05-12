@@ -63,7 +63,7 @@
 			"value": "dbserver98872.database.windows.net"
 		},
 		"SqlDatabaseCustomers_properties_typeProperties_database": {
-			"value": "AdventureWorksDW2022"
+			"value": "db"
 		},
 		"SqlDatabaseCustomers_properties_typeProperties_userName": {
 			"value": "mahima"
