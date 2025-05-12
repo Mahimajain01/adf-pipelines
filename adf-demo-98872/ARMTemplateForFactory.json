@@ -85,11 +85,11 @@
 		},
 		"SqlDatabaseCustomers_properties_typeProperties_database": {
 			"type": "string",
-			"defaultValue": "azuresqldb"
+			"defaultValue": "AdventureWorksDW2022"
 		},
 		"SqlDatabaseCustomers_properties_typeProperties_userName": {
 			"type": "string",
-			"defaultValue": "mahimajain01"
+			"defaultValue": "mahima"
 		},
 		"TaxiTripDb_properties_typeProperties_server": {
 			"type": "string",

@@ -63,10 +63,10 @@
 			"value": "dbserver98872.database.windows.net"
 		},
 		"SqlDatabaseCustomers_properties_typeProperties_database": {
-			"value": "azuresqldb"
+			"value": "AdventureWorksDW2022"
 		},
 		"SqlDatabaseCustomers_properties_typeProperties_userName": {
-			"value": "mahimajain01"
+			"value": "mahima"
 		},
 		"TaxiTripDb_properties_typeProperties_server": {
 			"value": "dbserver98872.database.windows.net"
